@@ -1,0 +1,150 @@
+@zmusic_backend_HostAddress = https://localhost:7151
+
+# === DEBUG ENDPOINTS ===
+
+# Test if AuthController is working
+GET {{zmusic_backend_HostAddress}}/api/auth/debug/test
+Accept: application/json
+
+###
+
+# Test database connection
+GET {{zmusic_backend_HostAddress}}/api/auth/debug/db-test
+Accept: application/json
+
+###
+
+# Simple test registration (no user input required)
+POST {{zmusic_backend_HostAddress}}/api/auth/register-simple
+Accept: application/json
+
+###
+
+# Check if email exists (for debugging)
+GET {{zmusic_backend_HostAddress}}/api/auth/check-email/admin@zmusic.com
+Accept: application/json
+
+###
+
+# === REGISTRATION TESTS ===
+
+# Auth - Register new user (SIMPLE TEST with detailed logs)
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser123",
+  "email": "testuser123@example.com", 
+  "password": "password123"
+}
+
+###
+
+# Auth - Register with different user
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "email": "john.doe@gmail.com", 
+  "password": "securepass123"
+}
+
+###
+
+# Auth - Register with minimal valid data
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "abc",
+  "email": "abc@test.com", 
+  "password": "123456"
+}
+
+###
+
+# Auth - Register with existing email (should fail)
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "email": "admin@zmusic.com", 
+  "password": "123456"
+}
+
+###
+
+# Auth - Register with invalid data (should fail with clear errors)
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "ab",
+  "email": "invalid-email", 
+  "password": "123"
+}
+
+###
+
+# Auth - Register with empty data (should fail)
+POST {{zmusic_backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "",
+  "email": "", 
+  "password": ""
+}
+
+###
+
+# === LOGIN TESTS ===
+
+# Login Admin user (seeded automatically)
+POST {{zmusic_backend_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@zmusic.com",
+  "password": "admin123"
+}
+
+###
+
+# Login Regular user (seeded automatically)
+POST {{zmusic_backend_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user1@zmusic.com",
+  "password": "user123"
+}
+
+###
+
+# Login newly registered user (if registration worked)
+POST {{zmusic_backend_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser123@example.com",
+  "password": "password123"
+}
+
+###
+
+# === OTHER TESTS ===
+
+# Test Swagger UI (API Documentation)
+GET {{zmusic_backend_HostAddress}}/
+Accept: text/html
+
+###
+
+# Songs - Get All (public access)
+GET {{zmusic_backend_HostAddress}}/api/songs
+Accept: application/json
+
+###

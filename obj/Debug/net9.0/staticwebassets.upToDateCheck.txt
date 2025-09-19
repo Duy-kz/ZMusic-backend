@@ -1,0 +1,18 @@
+wwwroot\covers\638936995093566097_lactroi.jpg
+wwwroot\music\638936995093451868_LacTroi.mp3
+wwwroot\covers\638937011220228214_AmThamBenEm.jpg
+wwwroot\music\638937011220080142_Âm Thầm Bên Em.mp3
+wwwroot\covers\638937012345811500_CoChacYeuLaDay.jpg
+wwwroot\music\638937012345727005_Có Chắc Yêu Là Đây (Onionn Remix countdown 2021).mp3
+wwwroot\covers\638937013227144309_Hay-Trao-Cho-Anh.jpg
+wwwroot\music\638937013227052700_Hãy Trao Cho Anh.mp3
+wwwroot\covers\638937014062899742_BoungDoiTayNhauRa.jpg
+wwwroot\music\638937014062818238_Buông Đôi Tay Nhau Ra.mp3
+wwwroot\covers\638937015340465573_KhuonMatDangThuong.jpg
+wwwroot\music\638937015340305825_Khuôn Mặt Đáng Thương.mp3
+wwwroot\covers\638937016935855392_ChayNgayDi.jpg
+wwwroot\music\638937016935718086_CHẠY NGAY ĐI.mp3
+wwwroot\covers\638937062660617257_NangAmXaDan.jpg
+wwwroot\music\638937062660488925_Nắng Ấm Xa Dần (Onionn Remix).mp3
+wwwroot\covers\638937064548864342_ChungTaKhongThuocVeNhau.jpg
+wwwroot\music\638937064548748301_Chúng Ta Không Thuộc Về Nhau - Niềm tin đã mất, giọt nước mắt cuốn kí ức anh chìm sâu - TuanDat Mellow (youtube).mp3

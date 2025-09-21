@@ -21,7 +21,7 @@ namespace zmusic_backend.Domain.Entities
         
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         
-        // Navigation properties
+      
         public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zmusic-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c645f64cb6f8ef3b7846e462a55617368888a70")]
 [assembly: System.Reflection.AssemblyProductAttribute("zmusic-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zmusic-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

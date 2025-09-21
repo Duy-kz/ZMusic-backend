@@ -141,3 +141,4 @@ C:\FPT\FPT-FALL2025\OJT25\Project\ReactJS_NET_API\ZMusic\backend\zmusic-backend\
 C:\FPT\FPT-FALL2025\OJT25\Project\ReactJS_NET_API\ZMusic\backend\zmusic-backend\zmusic-backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\FPT\FPT-FALL2025\OJT25\Project\ReactJS_NET_API\ZMusic\backend\zmusic-backend\zmusic-backend\bin\Debug\net9.0\BCrypt.Net-Next.dll
 C:\FPT\FPT-FALL2025\OJT25\Project\ReactJS_NET_API\ZMusic\backend\zmusic-backend\zmusic-backend\bin\Debug\net9.0\zmusic-backend.staticwebassets.runtime.json
+C:\FPT\FPT-FALL2025\OJT25\Project\ReactJS_NET_API\ZMusic\backend\zmusic-backend\zmusic-backend\obj\Debug\net9.0\zmusic-backend.sourcelink.json

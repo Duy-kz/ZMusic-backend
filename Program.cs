@@ -115,11 +115,7 @@ namespace zmusic_backend
                 {
                     Console.WriteLine("||||||||||||||||| Database connected successfully |||||||||||||||||");
                     
-                    // Seed initial users if they don't exist
-                    SeedInitialUsers(dbContext);
-                    
-                    // Seed sample songs for testing
-                    SeedSampleSongs(dbContext);
+                   
                 }
                 else
                 {
@@ -176,108 +172,7 @@ namespace zmusic_backend
             app.Run();
         }
 
-        private static void SeedInitialUsers(ZMusicDbContext context)
-        {
-            try
-            {
-                // Check if admin user exists
-                if (!context.Users.Any(u => u.Email == "admin@zmusic.com"))
-                {
-                    var adminUser = new User
-                    {
-                        Username = "admin",
-                        Email = "admin@zmusic.com",
-                        PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
-                        Role = "Admin",
-                        CreatedAt = DateTime.UtcNow
-                    };
-                    
-                    context.Users.Add(adminUser);
-                    Console.WriteLine("✅ Admin user created: admin@zmusic.com / admin123");
-                }
-
-                // Check if regular user exists
-                if (!context.Users.Any(u => u.Email == "user1@zmusic.com"))
-                {
-                    var regularUser = new User
-                    {
-                        Username = "user1",
-                        Email = "user1@zmusic.com",
-                        PasswordHash = BCrypt.Net.BCrypt.HashPassword("user123"),
-                        Role = "User",
-                        CreatedAt = DateTime.UtcNow
-                    };
-                    
-                    context.Users.Add(regularUser);
-                    Console.WriteLine("✅ Regular user created: user1@zmusic.com / user123");
-                }
-
-                context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ Error seeding users: {ex.Message}");
-            }
-        }
-
-        private static void SeedSampleSongs(ZMusicDbContext context)
-        {
-            try
-            {
-                // Only seed if no songs exist
-                if (!context.Songs.Any())
-                {
-                    var adminUser = context.Users.FirstOrDefault(u => u.Role == "Admin");
-                    if (adminUser != null)
-                    {
-                        var sampleSongs = new List<Song>
-                        {
-                            new Song
-                            {
-                                Title = "Shape of You",
-                                Artist = "Ed Sheeran",
-                                Album = "÷ (Divide)",
-                                Duration = 233,
-                                FilePath = "/music/sample-song.mp3", // You can replace with actual files
-                                CoverImagePath = "/covers/sample-cover.jpg",
-                                CreatedByUserId = adminUser.Id,
-                                CreatedAt = DateTime.UtcNow
-                            },
-                            new Song
-                            {
-                                Title = "Blinding Lights",
-                                Artist = "The Weeknd",
-                                Album = "After Hours",
-                                Duration = 200,
-                                FilePath = "/music/sample-song.mp3",
-                                CoverImagePath = "/covers/sample-cover.jpg",
-                                CreatedByUserId = adminUser.Id,
-                                CreatedAt = DateTime.UtcNow
-                            },
-                            new Song
-                            {
-                                Title = "Bohemian Rhapsody",
-                                Artist = "Queen",
-                                Album = "A Night at the Opera",
-                                Duration = 355,
-                                FilePath = "/music/sample-song.mp3",
-                                CoverImagePath = "/covers/sample-cover.jpg",
-                                CreatedByUserId = adminUser.Id,
-                                CreatedAt = DateTime.UtcNow
-                            }
-                        };
-
-                        context.Songs.AddRange(sampleSongs);
-                        context.SaveChanges();
-                        Console.WriteLine($"✅ {sampleSongs.Count} sample songs created");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ Error seeding sample songs: {ex.Message}");
-            }
-        }
+        
 
         private static string GetContentType(string fileName)
         {
